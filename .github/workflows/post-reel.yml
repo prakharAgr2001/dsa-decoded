@@ -1,0 +1,58 @@
+name: Post DSA reel to Instagram
+
+on:
+  schedule:
+    # PROVISIONAL slot (confirm in STATE.md): 18:47 IST + backup 19:27 IST. Off-peak minutes; avoids 11:31 and 13:17 IST.
+    - cron: '17 13 * * *'
+    - cron: '57 13 * * *'
+  workflow_dispatch:
+    inputs:
+      episode:
+        description: 'Episode id to post (e.g. S1E05). Empty = next unposted, not on hold'
+        required: false
+        default: ''
+      count:
+        description: 'How many unposted reels to post now'
+        required: false
+        default: '1'
+      dry_run:
+        description: 'Only check the token, post nothing'
+        type: boolean
+        default: false
+      trial:
+        description: 'Post as a trial reel (only when asked)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency: post-reel
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests markdown pygments
+      - name: Post
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          SKIP_IF_POSTED_WITHIN_H: ${{ github.event_name == 'schedule' && '8' || '' }}
+          EPISODE: ${{ github.event.inputs.episode }}
+          COUNT: ${{ github.event.inputs.count }}
+          DRY_RUN: ${{ github.event.inputs.dry_run == 'true' && '1' || '0' }}
+          TRIAL: ${{ github.event.inputs.trial == 'true' && '1' || '0' }}
+        run: python3 publish/post_reel.py
+      - name: Save queue status
+        if: always()
+        run: |
+          git config user.name "reel-bot"
+          git config user.email "reel-bot@users.noreply.github.com"
+          python3 -m publish.build_site --no-run
+          git add publish/queue.json site
+          git diff --cached --quiet || (git commit -m "Mark reel posted" && git pull --rebase origin main && git -c push.negotiate=true push)

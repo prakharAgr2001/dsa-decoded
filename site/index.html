@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DSA, DECODED · DSA interview questions, one pattern at a time</title><meta name="description" content="Notes, JavaScript solutions and practice lists for every reel."><meta name="theme-color" content="#F5F2EA">
+<meta property="og:title" content="DSA, DECODED · DSA interview questions, one pattern at a time"><meta property="og:description" content="Notes, JavaScript solutions and practice lists for every reel.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono&family=Oswald:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head><body><div class="wrap">
+<div class="top"><a class="logo" href="">DSA, <b>DECODED</b></a><a class="follow" href="https://instagram.com/tech.explained.dev">Follow on Instagram</a></div><h1>Crack the <span class="hl">pattern</span>, not the question</h1>
+<p class="lead">0 interview questions with notes, a JavaScript solution and 5 more to practise. Search by name, pattern or company.</p>
+<div class="search"><input id="q" type="search" placeholder="two pointers · amazon · s1e3" autocomplete="off" aria-label="Search">
+<div class="hint">Try <code>sliding window</code> <code>amazon</code> <code>s1e1</code></div></div><div id="list"></div>
+<div class="group"><h2>Patterns</h2><div class="grid"></div></div><div class="group"><h2>Companies</h2><div class="grid"></div></div><footer>One interview question, one pattern, one reel a day · <a href="https://instagram.com/tech.explained.dev">@tech.explained.dev</a></footer></div><script>
+const D=[];const q=document.getElementById('q'),list=document.getElementById('list');
+const norm=s=>s.toLowerCase().replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim();const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+D.forEach(d=>d.k=norm([d.id,d.title,d.pattern,d.cos.join(' '),d.text].join(' ')));
+function render(){const v=q.value.trim();let r=D;const m=v.match(/^\s*s?(\d+)\s*[ e.x]\s*(\d+)\s*$/i);
+ if(m)r=D.filter(d=>d.s==+m[1]&&d.e==+m[2]);else if(v){const w=norm(v).split(' ');r=D.filter(d=>w.every(x=>d.k.includes(x)))}
+ list.innerHTML=r.length?r.map(d=>`<a class="item" href="${d.id.toLowerCase()}/"><span class="n">${d.id}</span><span><span class="t">${esc(d.title)}</span><span class="snip">${esc(d.pattern)} · ${esc(d.claim)}</span></span></a>`).join(''):'<div class="empty">Nothing found. Try <b>two pointers</b>, <b>amazon</b> or <b>s1e3</b>.</div>'}
+q.oninput=render;document.querySelectorAll('.hint code').forEach(c=>c.onclick=()=>{q.value=c.textContent;render()});render();
+</script></body></html>
