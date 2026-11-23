@@ -47,7 +47,11 @@ def align(words, wav):
         cur.append(i)
         if w['strength'] > 0 or i == len(words) - 1:
             phrases.append((cur, w['strength'])); cur = []
-    psyl = [sum(syl(words[i]['w']) for i in p) for p, _ in phrases]
+    def wsyl(i):   # list numbers ("4, 7, 1, 7, 3.") are read one by one with a short pause each
+        w = words[i]['w']; base = syl(w)
+        if re.fullmatch(r'-?[0-9][0-9,]*,', w) or (re.fullmatch(r'-?[0-9]+[.?!:]', w) and i and re.fullmatch(r'-?[0-9][0-9,]*,', words[i - 1]['w'])): base += 2
+        return base
+    psyl = [sum(wsyl(i) for i in p) for p, _ in phrases]
     gapdur = [e - s for s, e in anchors]
     total_speech = (sp1 - sp0) - sum(e - s for s, e in gaps)
     rate = total_speech / max(1, sum(psyl))
@@ -94,7 +98,7 @@ def align(words, wav):
         segs.append((a, t1))
         L = sum(b - a for a, b in segs)
         idx = [w for p, _ in phrases[ip:i] for w in p]
-        sy = [max(1, syl(words[k]['w'])) for k in idx]
+        sy = [max(1, wsyl(k)) for k in idx]
         S = sum(sy)
         def at(frac):
             x = frac * L

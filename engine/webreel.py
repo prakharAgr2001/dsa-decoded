@@ -21,6 +21,12 @@ def spec(epid):
     if os.path.exists(os.path.join(ROOT, 'webreels', epid.lower(), 'scenes.src.js')):
         subprocess.run(['sh', sh, epid.lower()], check=True)   # kit + scenes.src.js -> scenes.js
     s = importlib.util.spec_from_file_location('spec_' + epid, p); m = importlib.util.module_from_spec(s); s.loader.exec_module(m)
+    if hasattr(m, 'NB'):   # data-driven notebook episode: template kit + NB json
+        d, k = os.path.dirname(p), os.path.join(ROOT, 'webreels', '_kit')
+        assert len(m.NB['scenes']) == len(m.NARRATION), f'{epid}: {len(m.NB["scenes"])} scenes vs {len(m.NARRATION)} narration lines'
+        open(os.path.join(d, 'scenes.js'), 'w').write(open(os.path.join(k, 'story.js')).read() + open(os.path.join(k, 'nb.js')).read()
+                                                      + f'const NB = {json.dumps(m.NB, ensure_ascii=False)};\nconst SCENES = NB_SCENES(NB);\n')
+        open(os.path.join(d, 'style.css'), 'w').write(open(os.path.join(k, 'story.css')).read() + open(os.path.join(k, 'nb.css')).read())
     return m.EP, [(None, line) for line in m.NARRATION]
 
 def prep(epid):

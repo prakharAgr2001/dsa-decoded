@@ -26,7 +26,7 @@ def parse(scenes):
             if m:
                 pauses.append((len(words) - 1, float(m.group(1)))); continue
             clean.append(tk)
-            st = 3 if tk[-1] in '.?!' else (1 if tk[-1] in ',:;—' else 0)
+            st = 3 if tk[-1] in '.?!' else (1 if tk[-1] in ',:;—' and not re.fullmatch(r'-?[0-9][0-9,]*,', tk) else 0)   # commas inside spoken number lists are not boundaries
             words.append(dict(w=tk, scene=si, strength=st))
         words[-1]['strength'] = 8
         paras.append(' '.join(clean))
@@ -38,6 +38,19 @@ def timing(epid, ep, scenes):
     wj = f'vo/{epid}.words.json'   # exact per-word [start, end] from a transcription (engine/words.py); else estimate from silences
     if os.path.exists(wj):
         tm = json.load(open(wj)); assert len(tm) == len(words), f'{wj}: {len(tm)} timings for {len(words)} script words'
+    elif os.path.exists(f'vo/{epid}.anchors.json'):   # scene start times from engine.ep (paragraph pauses) -> align words inside each scene only
+        anc = json.load(open(f'vo/{epid}.anchors.json')); tm = []
+        total = float(re.findall(r'Duration: (\d+):(\d+):([\d.]+)', subprocess.run(['ffmpeg', '-hide_banner', '-i', wav], capture_output=True, text=True).stderr)[0][2])
+        for si in range(len(scenes)):
+            a, b = anc[si], anc[si + 1] if si + 1 < len(anc) else total + 0.0
+            seg = f'tmp/{epid}_seg{si}.wav'; subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', wav, '-ss', f'{a:.3f}', '-to', f'{b:.3f}', seg], check=True)
+            ws = [w for w in words if w['scene'] == si]
+            try: t2, _ = align(ws, seg)
+            except Exception:   # too few pauses inside the scene: spread words by syllables
+                from engine.align import syl
+                sy = [max(1, syl(w['w'])) for w in ws]; tot = sum(sy); span = (b - a) * .92; t2, c = [], .05
+                for x in sy: d = span * x / tot; t2.append([c, c + d * .9]); c += d
+            tm += [[x + a, y + a] for x, y in t2]
     else:
         tm, dur = align(words, wav)
     # insert pauses into audio

@@ -1,1 +1,212 @@
-[]
+[
+ {
+  "id": "S1E01",
+  "posted": false,
+  "video": "videos/S1E01.mp4",
+  "cover": "covers/S1E01.jpg",
+  "caption": "Amazon asked this 👀\nTwo Sum, the Hashing way.\n💬 Comment NOTES for 5 more Hashing questions\n📤 Send this to a friend with an interview this week\nFollow @tech.explained.dsa\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "S1E02",
+  "posted": false,
+  "video": "videos/S1E02.mp4",
+  "cover": "covers/S1E02.jpg",
+  "caption": "A classic interview question 👀\nContains Duplicate, the Hashing way.\n💬 Comment NOTES for 5 more Hashing questions\n📤 Send this to a friend with an interview this week\nFollow @tech.explained.dsa\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "S1E03",
+  "posted": false,
+  "video": "videos/S1E03.mp4",
+  "cover": "covers/S1E03.jpg",
+  "caption": "Adobe asked this 👀\nGroup Anagrams, the Hashing way.\n💬 Comment NOTES for 5 more Hashing questions\n📤 Send this to a friend with an interview this week\nFollow @tech.explained.dsa\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "S1E04",
+  "posted": false,
+  "video": "videos/S1E04.mp4",
+  "cover": "covers/S1E04.jpg",
+  "caption": "A classic interview question 👀\nLongest Consecutive Sequence, the Hashing way.\n💬 Comment NOTES for 5 more Hashing questions\n📤 Send this to a friend with an interview this week\nFollow @tech.explained.dsa\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "S1E05",
+  "posted": false,
+  "video": "videos/S1E05.mp4",
+  "cover": "covers/S1E05.jpg",
+  "caption": "A classic interview question 👀\nMajority Element, the Voting (Boyer-Moore) way.\n💬 Comment NOTES for 5 more Voting (Boyer-Moore) questions\n📤 Send this to a friend with an interview this week\nFollow @tech.explained.dsa\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "S1E06",
+  "posted": false,
+  "video": "videos/S1E06.mp4",
+  "cover": "covers/S1E06.jpg",
+  "caption": "Google asked this 👀\nBest Time to Buy and Sell Stock, the Running minimum way.\n💬 Comment NOTES for 5 more Running minimum questions\n📤 Send this to a friend with an interview this week\nFollow @tech.explained.dsa\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "S1E07",
+  "posted": false,
+  "video": "videos/S1E07.mp4",
+  "cover": "covers/S1E07.jpg",
+  "caption": "Amazon asked this 👀\nMaximum Subarray, the Kadane's algorithm way.\n💬 Comment NOTES for 5 more Kadane's algorithm questions\n📤 Send this to a friend with an interview this week\nFollow @tech.explained.dsa\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "S1E08",
+  "posted": false,
+  "video": "videos/S1E08.mp4",
+  "cover": "covers/S1E08.jpg",
+  "caption": "Microsoft asked this 👀\nProduct of Array Except Self, the Prefix products way.\n💬 Comment NOTES for 5 more Prefix products questions\n📤 Send this to a friend with an interview this week\nFollow @tech.explained.dsa\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "S1E09",
+  "posted": false,
+  "video": "videos/S1E09.mp4",
+  "cover": "covers/S1E09.jpg",
+  "caption": "A classic interview question 👀\nMove Zeroes, the Two pointers way.\n💬 Comment NOTES for 5 more Two pointers questions\n📤 Send this to a friend with an interview this week\nFollow @tech.explained.dsa\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "S1E10",
+  "posted": false,
+  "video": "videos/S1E10.mp4",
+  "cover": "covers/S1E10.jpg",
+  "caption": "A classic interview question 👀\nValid Palindrome, the Two pointers way.\n💬 Comment NOTES for 5 more Two pointers questions\n📤 Send this to a friend with an interview this week\nFollow @tech.explained.dsa\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "S1E11",
+  "posted": false,
+  "video": "videos/S1E11.mp4",
+  "cover": "covers/S1E11.jpg",
+  "caption": "A classic interview question 👀\nTwo Sum II (sorted input), the Two pointers way.\n💬 Comment NOTES for 5 more Two pointers questions\n📤 Send this to a friend with an interview this week\nFollow @tech.explained.dsa\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "S1E12",
+  "posted": false,
+  "video": "videos/S1E12.mp4",
+  "cover": "covers/S1E12.jpg",
+  "caption": "A classic interview question 👀\nRemove Duplicates from Sorted Array, the Two pointers way.\n💬 Comment NOTES for 5 more Two pointers questions\n📤 Send this to a friend with an interview this week\nFollow @tech.explained.dsa\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "S1E13",
+  "posted": false,
+  "video": "videos/S1E13.mp4",
+  "cover": "covers/S1E13.jpg",
+  "caption": "A classic interview question 👀\nSort Colors, the Dutch national flag way.\n💬 Comment NOTES for 5 more Dutch national flag questions\n📤 Send this to a friend with an interview this week\nFollow @tech.explained.dsa\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "S1E14",
+  "posted": false,
+  "video": "videos/S1E14.mp4",
+  "cover": "covers/S1E14.jpg",
+  "caption": "A classic interview question 👀\nContainer With Most Water, the Two pointers way.\n💬 Comment NOTES for 5 more Two pointers questions\n📤 Send this to a friend with an interview this week\nFollow @tech.explained.dsa\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "S1E15",
+  "posted": false,
+  "video": "videos/S1E15.mp4",
+  "cover": "covers/S1E15.jpg",
+  "caption": "Microsoft asked this 👀\n3Sum, the Two pointers way.\n💬 Comment NOTES for 5 more Two pointers questions\n📤 Send this to a friend with an interview this week\nFollow @tech.explained.dsa\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "S1E16",
+  "posted": false,
+  "video": "videos/S1E16.mp4",
+  "cover": "covers/S1E16.jpg",
+  "caption": "Goldman Sachs asked this 👀\nTrapping Rain Water, the Two pointers way.\n💬 Comment NOTES for 5 more Two pointers questions\n📤 Send this to a friend with an interview this week\nFollow @tech.explained.dsa\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "S1E17",
+  "posted": false,
+  "video": "videos/S1E17.mp4",
+  "cover": "covers/S1E17.jpg",
+  "caption": "A classic interview question 👀\nMaximum Average Subarray I, the Sliding window way.\n💬 Comment NOTES for 5 more Sliding window questions\n📤 Send this to a friend with an interview this week\nFollow @tech.explained.dsa\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "S1E18",
+  "posted": false,
+  "video": "videos/S1E18.mp4",
+  "cover": "covers/S1E18.jpg",
+  "caption": "Uber asked this 👀\nLongest Substring Without Repeating Characters, the Sliding window way.\n💬 Comment NOTES for 5 more Sliding window questions\n📤 Send this to a friend with an interview this week\nFollow @tech.explained.dsa\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "S1E19",
+  "posted": false,
+  "video": "videos/S1E19.mp4",
+  "cover": "covers/S1E19.jpg",
+  "caption": "A classic interview question 👀\nMinimum Size Subarray Sum, the Sliding window way.\n💬 Comment NOTES for 5 more Sliding window questions\n📤 Send this to a friend with an interview this week\nFollow @tech.explained.dsa\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "S1E20",
+  "posted": false,
+  "video": "videos/S1E20.mp4",
+  "cover": "covers/S1E20.jpg",
+  "caption": "A classic interview question 👀\nRange Sum Query, the Prefix sum way.\n💬 Comment NOTES for 5 more Prefix sum questions\n📤 Send this to a friend with an interview this week\nFollow @tech.explained.dsa\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "S1E21",
+  "posted": false,
+  "video": "videos/S1E21.mp4",
+  "cover": "covers/S1E21.jpg",
+  "caption": "Google asked this 👀\nSubarray Sum Equals K, the Prefix sum + hash map way.\n💬 Comment NOTES for 5 more Prefix sum + hash map questions\n📤 Send this to a friend with an interview this week\nFollow @tech.explained.dsa\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "S1E22",
+  "posted": false,
+  "video": "videos/S1E22.mp4",
+  "cover": "covers/S1E22.jpg",
+  "caption": "A classic interview question 👀\nBinary Search, the Binary search way.\n💬 Comment NOTES for 5 more Binary search questions\n📤 Send this to a friend with an interview this week\nFollow @tech.explained.dsa\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "S1E23",
+  "posted": false,
+  "video": "videos/S1E23.mp4",
+  "cover": "covers/S1E23.jpg",
+  "caption": "A classic interview question 👀\nFind First and Last Position, the Binary search way.\n💬 Comment NOTES for 5 more Binary search questions\n📤 Send this to a friend with an interview this week\nFollow @tech.explained.dsa\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "S1E24",
+  "posted": false,
+  "video": "videos/S1E24.mp4",
+  "cover": "covers/S1E24.jpg",
+  "caption": "A classic interview question 👀\nFind Peak Element, the Binary search way.\n💬 Comment NOTES for 5 more Binary search questions\n📤 Send this to a friend with an interview this week\nFollow @tech.explained.dsa\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "S1E25",
+  "posted": false,
+  "video": "videos/S1E25.mp4",
+  "cover": "covers/S1E25.jpg",
+  "caption": "Amazon asked this 👀\nSearch in Rotated Sorted Array, the Binary search way.\n💬 Comment NOTES for 5 more Binary search questions\n📤 Send this to a friend with an interview this week\nFollow @tech.explained.dsa\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "S1E26",
+  "posted": false,
+  "video": "videos/S1E26.mp4",
+  "cover": "covers/S1E26.jpg",
+  "caption": "Flipkart asked this 👀\nKoko Eating Bananas, the Binary search on answer way.\n💬 Comment NOTES for 5 more Binary search on answer questions\n📤 Send this to a friend with an interview this week\nFollow @tech.explained.dsa\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "S1E27",
+  "posted": false,
+  "video": "videos/S1E27.mp4",
+  "cover": "covers/S1E27.jpg",
+  "caption": "ServiceNow asked this 👀\nValid Parentheses, the Stack way.\n💬 Comment NOTES for 5 more Stack questions\n📤 Send this to a friend with an interview this week\nFollow @tech.explained.dsa\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "S1E28",
+  "posted": false,
+  "video": "videos/S1E28.mp4",
+  "cover": "covers/S1E28.jpg",
+  "caption": "A classic interview question 👀\nMin Stack, the Stack way.\n💬 Comment NOTES for 5 more Stack questions\n📤 Send this to a friend with an interview this week\nFollow @tech.explained.dsa\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "S1E29",
+  "posted": false,
+  "video": "videos/S1E29.mp4",
+  "cover": "covers/S1E29.jpg",
+  "caption": "Goldman Sachs asked this 👀\nNext Greater Element, the Monotonic stack way.\n💬 Comment NOTES for 5 more Monotonic stack questions\n📤 Send this to a friend with an interview this week\nFollow @tech.explained.dsa\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "S1E30",
+  "posted": false,
+  "video": "videos/S1E30.mp4",
+  "cover": "covers/S1E30.jpg",
+  "caption": "A classic interview question 👀\nDaily Temperatures, the Monotonic stack way.\n💬 Comment NOTES for 5 more Monotonic stack questions\n📤 Send this to a friend with an interview this week\nFollow @tech.explained.dsa\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ }
+]

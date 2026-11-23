@@ -1,67 +1,89 @@
-// S1E01 Two Sum (hashing). Company/salary sources are in spec.py. No logos. Numbers: only pair (1,3) sums to 500; 5000*4999/2 = 12,497,500.
-const A = [120, 350, 280, 150, 400], TG = 500, BW = 160, GAP = 14, X0 = 112;
-const bx = i => X0 + i * (BW + GAP);
-const ROW = (id, top) => `<div class="row" id="${id}" style="top:${top}px">${A.map((v, i) => `<div class="b" style="left:${bx(i) - X0}px"><b>${v}</b><span>${i}</span></div>`).join('')}<div class="frame"></div></div>`;
-function FRAME(S, id, l, r, col = 'var(--grn)', show = 1) { const f = S.$(`#${id} .frame`); f.style.left = (bx(l) - X0 - 10) + 'px'; f.style.width = ((r - l + 1) * (BW + GAP) - GAP + 20) + 'px'; f.style.borderColor = col; f.style.boxShadow = `0 0 40px ${col}`; f.style.opacity = show; }
-function LITSET(S, id, set, cls = 'on') { S.$$(`#${id} .b`).forEach((b, i) => b.classList.toggle(cls, set.includes(i))); }
-const PTR = (id, txt, col) => `<div class="pt" id="${id}" style="--c:${col}"><i></i>${txt}</div>`;
-function PT(S, id, i, top) { const p = S.$('#' + id); p.style.left = (bx(i) + BW / 2 - 70) + 'px'; p.style.top = top + 'px'; }
-function FLOAT(S, sel, amp = 6, sp = 2.2) { const e = S.$(sel); if (e) e.style.translate = `0 ${amp * Math.sin(S.abs * sp)}px`; }
-const GL = (id, col) => `<div class="sglow" id="${id}" style="background:radial-gradient(60% 45% at 50% 45%,${col},transparent 70%)"></div>`;
-function GLOW(S, id, at, len = 1.2) { const k = S.on(at) ? Math.max(0, 1 - (S.t - at) / len) : 0; S.$('#' + id).style.opacity = .55 * k; }
-function KARAOKE(S, sel, si, off) { const ws = DATA.words.filter(w => w[3] === si), t0 = DATA.spans[si][0];
-  S.$$(sel + ' w').forEach((e, k) => { const w = ws[k + off]; const on = w && S.t >= w[1] - t0 - .05; e.style.opacity = on ? 1 : .22; }); }
-const SEEN = (n) => `<div class="seen"><h3>SEEN (value → index)</h3>${[0, 1, 2].map(k => `<div class="kv" id="kv${k}"><b>${A[k]}</b><span>at</span><i>${k}</i></div>`).slice(0, n).join('')}</div>`;
+// W1 notebook explainer: handwritten ink on squared paper; boxes/circles/arrows draw themselves; dry-run table like a teacher.
+// Numbers: [120,350,280,150,400] target 500 -> only pair (1,3); 5,000 numbers -> 12,497,500 pairs (see spec.py).
+const A = [120, 350, 280, 150, 400], BX = i => 150 + i * 170, BY = 430, BW = 150, BH = 130;
+const BLUE = '#1f3fa8', RED = '#d0312d', GRN = '#1e8a4c', INK = '#262626';
+const J = (s, k, a = 7) => (R(s * 7.31 + k) - .5) * a;
+const rr = (x, y, w, h, s) => `M${x + J(s, 1)} ${y + J(s, 2)} L${x + w + J(s, 3)} ${y + J(s, 4)} L${x + w + J(s, 5)} ${y + h + J(s, 6)} L${x + J(s, 7)} ${y + h + J(s, 8)} L${x + J(s, 9) + 4} ${y + J(s, 10) - 5}`;
+const ln = (x1, y1, x2, y2, s) => `M${x1} ${y1} Q${(x1 + x2) / 2 + J(s, 1, 6)} ${(y1 + y2) / 2 + J(s, 2, 6)} ${x2} ${y2}`;
+const ell = (cx, cy, rx, ry, s) => { let d = ''; for (let k = 0; k <= 30; k++) { const a = -1.3 + k * (2 * Math.PI + .7) / 30, r = 1 + J(s, k, .09); d += (k ? 'L' : 'M') + (cx + rx * r * Math.cos(a)).toFixed(1) + ' ' + (cy + ry * r * Math.sin(a)).toFixed(1) + ' '; } return d; };
+const arw = (x1, y1, x2, y2, h) => { const cx = (x1 + x2) / 2, cy = Math.min(y1, y2) - h, dx = x2 - cx, dy = y2 - cy, L = Math.hypot(dx, dy), ux = dx / L, uy = dy / L, a = 24;
+  return `M${x1} ${y1} Q${cx} ${cy} ${x2} ${y2} M${x2} ${y2} L${x2 - a * (ux * .8 - uy * .55)} ${y2 - a * (uy * .8 + ux * .55)} M${x2} ${y2} L${x2 - a * (ux * .8 + uy * .55)} ${y2 - a * (uy * .8 - ux * .55)}`; };
+const P = (id, d, col, w = 5) => `<path id="${id}" d="${d}" pathLength="1" stroke="${col}" stroke-width="${w}"/>`;
+const SVG = inner => `<svg class="ink" viewBox="0 0 1080 1920">${inner}</svg>`;
+const H = (id, x, y, sz, txt, cls = '') => `<div class="hw ${cls}" id="${id}" style="left:${x}px;top:${y}px;font-size:${sz}px">${txt}</div>`;
+const HC = (id, y, sz, txt, cls = '') => `<div style="position:absolute;left:0;right:0;top:${y}px;text-align:center"><span class="hw ${cls}" id="${id}" style="position:relative;display:inline-block;font-size:${sz}px">${txt}</span></div>`;
+function WRITE(S, id, at, dur = .5) { const e = S.$('#' + id); if (at < 0) { e.style.opacity = 1; e.style.clipPath = 'none'; return; } const p = S.P(at, Math.max(.12, dur * .8), x => x);
+  e.style.opacity = p > 0 ? 1 : 0; e.style.clipPath = `inset(-30px ${100 - 100 * p}% -30px -30px)`; if (S.on(at)) S.sfx(at, 'click'); }
+function DRAW(S, id, at, dur = .4) { const e = S.$('#' + id); if (at < 0) { e.style.strokeDashoffset = 0; return; } e.style.strokeDashoffset = 1 - S.P(at, dur * .8, eo); if (S.on(at)) S.sfx(at, 'swish'); }
+// array of boxes
+const ARR_SVG = A.map((v, i) => P('bx' + i, rr(BX(i), BY, BW, BH, i + 1), INK, 4)).join('');
+const ARR_HTML = A.map((v, i) => `<div class="cell blk b" id="n${i}" style="left:${BX(i)}px;top:${BY + 24}px;width:${BW}px;font-size:68px;font-weight:700">${v}</div><div class="cell gry" id="x${i}" style="left:${BX(i)}px;top:${BY + BH + 4}px;width:${BW}px;font-size:34px">${i}</div>`).join('');
+function ARRAY(S, times) { times.forEach((t, i) => { DRAW(S, 'bx' + i, t, .3); const op = t < 0 || S.on(t + .12) ? 1 : 0; S.$('#n' + i).style.opacity = op; S.$('#x' + i).style.opacity = op; }); }
+const STATIC = [-1, -1, -1, -1, -1];
+// dry-run table
+const TY = 720, RH = 90, COLS = [[120, 100, 'i'], [220, 190, 'num'], [410, 190, 'need'], [600, 180, 'seen?'], [780, 240, 'action']];
+const ROWS = [[0, 120, 380, 'no', 'save'], [1, 350, 150, 'no', 'save'], [2, 280, 220, 'no', 'save'], [3, 150, 350, 'YES', 'return [1,3]']];
+const RCLS = ['blk', 'blk', 'blk', '', ''];
+const TAB_SVG = P('tb', rr(120, TY, 900, RH * 5, 31), INK, 4) + P('th', ln(120, TY + RH, 1020, TY + RH, 32), INK, 4) + [220, 410, 600, 780].map((x, k) => P('tc' + k, ln(x, TY, x, TY + RH * 5, 40 + k), INK, 3)).join('');
+const TAB_HEAD = COLS.map((c, k) => `<div class="cell blk" id="hd${k}" style="left:${c[0]}px;top:${TY + 16}px;width:${c[1]}px;font-size:44px;font-weight:700">${c[2]}</div>`).join('');
+const TAB_ROWS = n => ROWS.slice(0, n).map((r, ri) => r.map((v, ci) => { const cls = ci === 3 ? (v === 'YES' ? 'grn' : 'red') : ci === 4 ? (ri === 3 ? 'grn' : '') : RCLS[ci];
+  return `<div class="cell ${cls}" id="c${ri}${ci}" style="left:${COLS[ci][0]}px;top:${TY + RH * (ri + 1) + 16}px;width:${COLS[ci][1]}px;font-size:${ci === 4 && ri === 3 ? 44 : 52}px;${ri === 3 && ci >= 3 ? 'font-weight:700' : ''}">${v}</div>`; }).join('')).join('');
+function TABLE(S, at) { DRAW(S, 'tb', at, .5); DRAW(S, 'th', at < 0 ? -1 : at + .3, .3); [0, 1, 2, 3].forEach(k => DRAW(S, 'tc' + k, at < 0 ? -1 : at + .35 + k * .06, .3)); COLS.forEach((c, k) => S.$('#hd' + k).style.opacity = at < 0 || S.on(at + .5) ? 1 : 0); }
+function CELL(S, r, c, at) { const e = S.$(`#c${r}${c}`); if (at < 0) { e.style.opacity = 1; e.style.clipPath = 'none'; return; } const p = S.P(at, .25, x => x); e.style.opacity = p > 0 ? 1 : 0; e.style.clipPath = `inset(-20px ${100 - 100 * p}% -20px -20px)`; if (S.on(at)) S.sfx(at, 'click'); }
+const SEENL = `<div class="hw blk" id="sl" style="left:130px;top:${TY + RH * 5 + 40}px;font-size:58px;opacity:1">seen = { <span id="s0">120</span><span id="s1">, <span id="s1v">350</span></span><span id="s2">, 280</span> }</div>`;
+const PTR = `<div class="hw red b" id="pt" style="top:600px;font-size:60px;opacity:1">↑ i</div>`;
+function PT(S, f) { S.$('#pt').style.left = (BX(0) + 45 + f * 170) + 'px'; }
 const SCENES = [
- { // 0 hook
-  html: `<div class="offer" id="of"><div class="ok">OFFER</div><div class="role">Software Development Engineer I</div><div class="co">Amazon · India</div><div class="ctc"><span id="ct">₹0</span><small> LPA total comp</small></div></div>
-   <div class="abs center" id="ch" style="top:1020px;opacity:0"><span class="tag">ASKED IN AMAZON INTERVIEWS · 2025</span></div>
-   <div class="abs center h2" id="q" style="top:1130px;opacity:0">this <span class="mark" id="mk">exact question</span></div>
-   <div class="abs center lab" style="top:1330px;font-size:22px">salary: AmbitionBox range for SDE-1 · illustration</div>`,
-  draw(S) { const p = S.P(0, .5, back); S.$('#of').style.transform = `translateY(${120 * (1 - clamp(p))}px) rotate(${-3 + 3 * clamp(p)}deg)`; S.$('#of').style.opacity = clamp(p);
-    COUNT(S, '#ct', 0, 28, .2, .9, v => '₹' + Math.round(v)); if (S.on(1.1)) S.sfx(1.1, 'ding'); POP(S, '#ch', TT(S, 'Amazon', .25) + .3, 'pop'); IN(S, '#q', TT(S, 'exact', .5) - .2); MK(S, '#mk', TT(S, 'question', .6)); }},
- { // 1 question
-  html: `<div class="abs center kick" style="top:420px">the question</div><div class="qcard" id="qc"><w>Find</w> <b><w>two</w> <w>numbers</w></b> <w>in</w> <w>a</w> <w>list</w><br><w>that</w> <b><w>add</w> <w>up</w> <w>to</w> <w>a</w> <w>target</w></b>.</div>`,
-  draw(S) { IN(S, '#qc', .05, 60); KARAOKE(S, '#qc', 1, 3); }},
- { // 2 example
-  html: `<div class="abs center kick" style="top:440px">prices</div>${ROW('r2', 560)}<div class="abs center" id="tg" style="top:800px;opacity:0"><span class="tgt">TARGET ₹500</span></div>
-   <div class="abs center big" id="an" style="top:950px;font-size:120px;color:var(--grn);opacity:0">350 + 150 = 500</div>`,
-  draw(S) { S.$$('#r2 .b').forEach((b, i) => { const p = S.P(TT(S, String(A[i]), .1 + i * .05) - .1, .3, back); b.style.opacity = clamp(p); b.style.transform = `translateY(${40 * (1 - clamp(p))}px)`; });
-    POP(S, '#tg', TT(S, '500', .45) - .1, 'pop'); const a1 = TT(S, '350', .7, 2), a2 = TT(S, '150', .85, 2); const set = [];
-    if (S.on(a1 - .1)) set.push(1); if (S.on(a2 - .1)) set.push(3); LITSET(S, 'r2', set); POP(S, '#an', a2, 'ding'); FLOAT(S, '#r2', 5); }},
- { // 3 trap
-  html: `${ROW('r3', 520)}<div class="abs center big" id="ck" style="top:820px;font-size:130px;color:var(--red)">0</div><div class="abs center lab" style="top:990px;font-size:40px">pairs to check for 5,000 numbers</div>
-   <div class="stamp" id="rj" style="left:250px;top:1110px;font-size:110px">REJECTED</div>${GL('g3', 'rgba(255,59,59,.55)')}`,
-  draw(S) { const k = Math.floor(S.t * 8), pairs = [[0, 1], [0, 2], [0, 3], [0, 4], [1, 2], [1, 3], [1, 4], [2, 3], [2, 4], [3, 4]], pr = pairs[k % 10]; LITSET(S, 'r3', pr, 'bad'); if (k !== this.k) { S.sfx(S.t, 'tick'); this.k = k; }
-    const tr = TT(S, 'Rejected', .9); COUNT(S, '#ck', 0, 12497500, .3, TT(S, 'million', .6) - .1, v => fmt(v), x => x * x * x); STAMP(S, '#rj', tr); GLOW(S, 'g3', tr); SHAKE(S, '#r3', tr, 16); SHAKE(S, '#ck', tr, 10); if (S.t > tr) LITSET(S, 'r3', []); }},
- { // 4 insight intro
-  html: `<div class="abs center h" style="top:360px;font-size:110px"><span class="mark" id="mk">Hash map</span></div>${ROW('r4', 600)}
-   <div class="abs center h2" id="qq" style="top:880px;opacity:0">"have I already seen<br>my <span style="color:var(--yel)">partner</span>?"</div>
-   <div class="abs center need" id="pf" style="top:1120px;opacity:0">partner = <b>500 − number</b></div>`,
-  draw(S) { MK(S, '#mk', TT(S, 'hash', .3)); IN(S, '#qq', TT(S, 'question', .6) - .1); IN(S, '#pf', TT(S, 'partner', .85) - .1); S.$$('#r4 .b').forEach((b, i) => b.style.translate = `0 ${8 * Math.sin(S.t * 3 - i * .7)}px`); }},
- { // 5 walk: 120, 350, 280 -> save
-  html: `${ROW('r5', 420)}${PTR('pi', 'i', '#4c9dff')}${[0, 1, 2].map(k => `<div class="fly" id="fy${k}">${A[k]}</div>`).join('')}<div class="abs center need" id="nd" style="top:720px"></div><div class="abs center x" id="ns" style="top:830px;opacity:0">✗ not seen</div>${SEEN(3)}`,
-  draw(S) { const ts = [TT(S, '120', .05), TT(S, '350', .35), TT(S, '280', .68)], sv = [1, 2, 3].map(n => TT(S, 'save', .25 + n * .25, n));
-    let i = 0; ts.forEach((t, j) => { if (S.on(t - .1)) i = j; }); let pf = i; if (i < 2) pf = i + S.P(ts[i + 1] - .45, .35, eio); PT(S, 'pi', pf, 590); LITSET(S, 'r5', [i]);
-    [0, 1, 2].forEach(k => { const f = S.$('#fy' + k), q = S.P(sv[k] - .4, .38, eio), x0 = bx(k) + BW / 2, y0 = 495, x1 = 540, y1 = 1111 + 94 * k;
-      f.style.opacity = q > 0 && q < 1 ? 1 : 0; f.style.left = (x0 + (x1 - x0) * q - 70) + 'px'; f.style.top = (y0 + (y1 - y0) * q - 90 * Math.sin(q * Math.PI) - 40) + 'px'; if (S.on(sv[k] - .4)) S.sfx(sv[k] - .4, 'swish'); });
-    S.$('#nd').innerHTML = `${A[i]} needs <b>${TG - A[i]}</b>`; if (i !== this.i) { S.sfx(S.t, 'click'); this.i = i; }
-    const saved = sv.filter(t => S.on(t - .05)).length; S.$('#ns').style.opacity = saved <= i ? 1 : 0;
-    [0, 1, 2].forEach(k => { const p = S.P(sv[k] - .05, .3, back); S.$('#kv' + k).style.opacity = clamp(p); S.$('#kv' + k).style.transform = `translateX(${60 * (1 - clamp(p))}px)`; if (S.on(sv[k] - .05)) S.sfx(sv[k] - .05, 'pop'); }); }},
- { // 6 hit
-  html: `${ROW('r6', 420)}${PTR('pi6', 'i', '#4c9dff')}<svg class="abs" width="1080" height="700" style="left:0;top:0"><path id="arc" d="" stroke="#ffd23f" stroke-width="7" fill="none" stroke-dasharray="16 10"/></svg>
-   <div class="abs center need" id="nd6" style="top:720px">150 needs <b>350</b></div><div class="abs center" id="fd" style="top:830px;opacity:0"><span class="tgt" style="font-size:52px">FOUND · [1, 3]</span></div>${SEEN(3)}${GL('g6', 'rgba(61,220,132,.5)')}`,
-  draw(S) { PT(S, 'pi6', 3, 590); GLOW(S, 'g6', TT(S, 'done', .85) - .1, 1.5); SHAKE(S, '#fd', TT(S, 'done', .85) - .1, 10); const ta = TT(S, 'already', .3), td = TT(S, 'done', .85);
-    const hit = S.on(ta - .1); S.$('#kv1').classList.toggle('hl', hit); [0, 1, 2].forEach(k => S.$('#kv' + k).style.opacity = 1); if (S.on(ta - .1)) S.sfx(ta - .1, 'ding');
-    LITSET(S, 'r6', hit ? [1, 3] : [3]); const p = S.P(TT(S, 'index', .6) - .2, .5, eio);
-    S.$('#arc').setAttribute('d', p > 0 ? `M${bx(3) + 80} 410 Q${(bx(1) + bx(3)) / 2 + 80} ${410 - 200 * p} ${bx(3) + 80 - (bx(3) - bx(1)) * p} 410` : ''); POP(S, '#fd', td - .1, 'thud'); }},
- { // 8 payoff
-  html: `${ROW('r8', 420)}<div class="abs center lab" id="tc" style="top:620px;font-size:44px">lookups: 0</div><div class="abs center" id="on" style="top:760px;opacity:0"><span class="badge">O(n)</span></div>
-   <div class="stamp g" id="pn" style="left:200px;top:1160px;font-size:76px">HASHING PATTERN</div>`,
-  draw(S) { const n = Math.min(4, Math.floor(4 * S.P(.05, TT(S, 'lookup', .4), x => x) + .001)); LITSET(S, 'r8', [0, 1, 2, 3].slice(0, n)); S.$('#tc').textContent = `lookups: ${n} (stopped at the answer)`; if (n !== this.n) { S.sfx(S.t, 'click'); this.n = n; }
-    POP(S, '#on', TT(S, 'o', .7) - .1, 'ding'); S.$('#on .badge').style.transform = `scale(${1 + .035 * Math.sin(S.t * 5)})`; STAMP(S, '#pn', TT(S, 'o', .7) + .45, -6); }},
+ { // 0 hook: sticky-note offer + red circle
+  html: `<div class="sticky" id="st">${H('o1', 60, 50, 38, 'OFFER LETTER', 'gry b')}${H('o2', 60, 110, 60, 'SDE-1 · Amazon · India', 'blk')}${H('o3', 60, 200, 190, '₹28 LPA', 'red mk')}</div>
+   ${SVG(P('c0', ell(470, 640, 300, 125, 3), RED, 6) + P('u0', ln(150, 1000, 980, 994, 5), BLUE, 5))}
+   ${H('a1', 150, 900, 56, 'Asked in Amazon interviews · 2025', 'b')}${H('a2', 150, 1040, 66, '→ this exact question', 'red b')}${H('a3', 150, 1160, 34, 'salary: AmbitionBox range for SDE-1', 'gry')}`,
+  draw(S) { const p = S.P(0, .4, back); S.$('#st').style.opacity = clamp(p); S.$('#st').style.translate = `0 ${60 * (1 - clamp(p))}px`;
+    WRITE(S, 'o1', .1, .2); WRITE(S, 'o2', .2, .3); WRITE(S, 'o3', TT(S, 'lakh', .2) - .25, .45); DRAW(S, 'c0', TT(S, 'Amazon', .3), .45);
+    WRITE(S, 'a1', TT(S, 'exact', .5) - .5, .7); DRAW(S, 'u0', TT(S, 'question', .6), .35); WRITE(S, 'a2', TT(S, 'interviews', .85) - .35, .35); WRITE(S, 'a3', TT(S, 'interviews', .85), .3); }},
+ { // 1 question in handwriting
+  html: `${SVG(P('u1', ln(250, 715, 960, 710, 7), RED, 6))}${H('q0', 130, 420, 96, 'Q.', 'red b')}${H('q1', 130, 540, 74, 'Find two numbers in a list')}${H('q2', 130, 630, 74, 'that add up to a target.')}${H('q3', 130, 780, 46, '(return their positions)', 'gry')}`,
+  draw(S) { WRITE(S, 'q0', .02, .2); const tf = TT(S, 'find', .2), tl = TT(S, 'list', .6), tt = TT(S, 'that', .65), tg = TT(S, 'target', .95);
+    WRITE(S, 'q1', tf - .1, tl - tf + .3); WRITE(S, 'q2', tt - .1, tg - tt + .3); DRAW(S, 'u1', TT(S, 'add', .75), .5); WRITE(S, 'q3', tg + .1, .3); }},
+ { // 2 example: boxes drawn per spoken number, answer circled
+  html: `${SVG(ARR_SVG + P('e1', ell(BX(1) + 75, BY + 66, 102, 96, 11), GRN, 6) + P('e3', ell(BX(3) + 75, BY + 66, 102, 96, 13), GRN, 6))}${H('l0', 130, 330, 56, 'nums =', 'blk')}${ARR_HTML}
+   ${H('tg', 130, 680, 66, 'target = 500', 'red b')}${H('an', 130, 820, 80, '350 + 150 = 500 ✓', 'grn b')}`,
+  draw(S) { WRITE(S, 'l0', .02, .25); ARRAY(S, A.map((v, i) => TT(S, String(v), .1 + i * .1) - .18)); WRITE(S, 'tg', TT(S, '500', .55) - .3, .4);
+    const a1 = TT(S, '350', .75, 2), a2 = TT(S, '150', .9, 2); DRAW(S, 'e1', a1 - .1, .35); DRAW(S, 'e3', a2 - .1, .35); WRITE(S, 'an', a2 - .05, .35); }},
+ { // 3 brute force: every pair arcs + the real count, then crossed out
+  html: `${SVG(ARR_SVG + [[0, 1], [0, 2], [0, 3], [0, 4], [1, 2], [1, 3], [1, 4], [2, 3], [2, 4], [3, 4]].map((p, k) => P('p' + k, arw(BX(p[0]) + 75, BY - 10, BX(p[1]) + 75, BY - 10, 30 + (p[1] - p[0]) * 26), BLUE, 3)).join('')
+     + P('sx', ln(110, 880, 1000, 840, 9), RED, 8) + P('sx2', rr(150, 1010, 760, 120, 17), RED, 5))}${ARR_HTML}
+   ${H('bf', 130, 660, 60, 'Brute force: check every pair', 'blk b')}${H('m1', 130, 760, 58, 'pairs = n(n−1) / 2')}${H('m2', 130, 850, 58, 'n = 5,000 → <span class="hl">12,497,500</span> checks', 'blk')}
+   ${H('rj', 180, 1030, 80, '✗ TOO SLOW · O(n²)', 'red mk')}`,
+  draw(S) { ARRAY(S, STATIC); const tp = TT(S, 'pair', .3); for (let k = 0; k < 10; k++) DRAW(S, 'p' + k, .05 + k * (tp + .5) / 10, .25);
+    WRITE(S, 'bf', .05, tp); WRITE(S, 'm1', TT(S, 'for', .4) - .2, .5); WRITE(S, 'm2', TT(S, '5000', .5) - .1, TT(S, 'million', .8) - TT(S, '5000', .5) + .2);
+    const tr = TT(S, 'rejected', .95) - .1; DRAW(S, 'sx', tr, .25); WRITE(S, 'rj', tr, .3); DRAW(S, 'sx2', tr + .15, .35); SHAKE(S, '#rj', tr, 8); }},
+ { // 4 idea: hash map + formula + the one question
+  html: `${SVG(ARR_SVG + P('fb', rr(160, 770, 620, 110, 21), BLUE, 5))}${ARR_HTML}${H('id', 130, 660, 62, 'Idea: use a <span class="hl">hash map</span>', 'blk b')}
+   ${H('fm', 190, 782, 68, 'need = 500 − num', 'b')}${H('qq', 130, 930, 58, '“have I already seen my partner?”', 'red')}${H('s00', 130, 1060, 60, 'seen = { }', 'blk')}`,
+  draw(S) { ARRAY(S, STATIC); WRITE(S, 'id', TT(S, 'trick', .1) - .1, .6); WRITE(S, 's00', TT(S, 'map', .3) + .1, .3); DRAW(S, 'fb', TT(S, 'every', .4) - .1, .4);
+    WRITE(S, 'fm', TT(S, 'every', .4), .5); const ta = TT(S, 'ask', .6); WRITE(S, 'qq', ta - .1, TT(S, 'partner', .95) - ta + .2); }},
+ { // 5 dry run rows 0-2
+  html: `${SVG(ARR_SVG + TAB_SVG)}${ARR_HTML}${PTR}${TAB_HEAD}${TAB_ROWS(3)}${SEENL}`,
+  draw(S) { ARRAY(S, STATIC); TABLE(S, 0); const ts = [TT(S, '120', .05), TT(S, '350', .38), TT(S, '280', .7)], sv = [1, 2, 3].map(n => TT(S, 'save', .25 + n * .25, n)), nd = [1, 2, 3].map(n => TT(S, 'needs', .1 + n * .3, n));
+    let i = 0; ts.forEach((t, j) => { if (S.on(t - .15)) i = j; }); let f = i; if (i < 2) f = i + S.P(ts[i + 1] - .4, .3, eio); PT(S, f);
+    for (let r = 0; r < 3; r++) { CELL(S, r, 0, ts[r] - .15); CELL(S, r, 1, ts[r] - .1); CELL(S, r, 2, nd[r] + .05); CELL(S, r, 3, sv[r] - .35); CELL(S, r, 4, sv[r] - .05); S.$('#s' + r).style.opacity = S.on(sv[r]) ? 1 : 0; } }},
+ { // 6 the hit: row 3, YES circled, arc back to index 1
+  html: `${SVG(ARR_SVG + TAB_SVG + P('ar', arw(BX(3) + 75, BY - 10, BX(1) + 75, BY - 10, 120), GRN, 6) + P('ey', ell(690, TY + RH * 4 + 45, 80, 40, 23), GRN, 5))}${ARR_HTML}${PTR}${TAB_HEAD}${TAB_ROWS(4)}${SEENL}
+   ${H('dn', 620, TY + RH * 5 + 120, 110, '✓ done!', 'grn mk')}`,
+  draw(S) { ARRAY(S, STATIC); TABLE(S, -1); PT(S, 3); for (let r = 0; r < 3; r++) for (let c = 0; c < 5; c++) CELL(S, r, c, -1); [0, 1, 2].forEach(r => S.$('#s' + r).style.opacity = 1);
+    CELL(S, 3, 0, .02); CELL(S, 3, 1, TT(S, '150', .15) - .1); CELL(S, 3, 2, TT(S, 'needs', .25) + .05); const ta = TT(S, 'already', .45) - .1;
+    CELL(S, 3, 3, ta); DRAW(S, 'ey', ta + .1, .35); DRAW(S, 'ar', ta, .5); S.$('#s1v').classList.toggle('hl', S.on(ta)); CELL(S, 3, 4, TT(S, 'index', .7) - .1);
+    const td = TT(S, 'done', .9) - .1; WRITE(S, 'dn', td, .3); if (S.on(td)) S.sfx(td, 'ding'); }},
+ { // 8 complexity + pattern stamp
+  html: `${SVG(P('hu', ln(130, 470, 520, 466, 51), INK, 5) + P('tbx', rr(115, 520, 520, 120, 52), GRN, 5) + P('st3', ln(120, 900, 640, 892, 53), RED, 6) + P('stp', rr(150, 1010, 820, 160, 54), RED, 6))}
+   ${H('h', 130, 380, 74, 'Complexity', 'blk b')}${H('t1', 145, 530, 84, 'Time: O(n)', 'grn b')}${H('t1b', 660, 555, 46, '← one pass', 'gry')}${H('t2', 130, 700, 60, 'Space: O(n)  (the seen set)')}${H('t3', 130, 850, 60, 'Brute force: O(n²)', 'red')}
+   <div style="position:absolute;left:170px;top:1020px;width:760px;height:150px;transform:rotate(-4deg)">${H('pn', 30, 22, 92, 'PATTERN: HASHING', 'red mk')}</div>`,
+  draw(S) { WRITE(S, 'h', .02, .3); DRAW(S, 'hu', .25, .3); const tp = TT(S, 'pass', .2); WRITE(S, 't1', tp - .15, .4); DRAW(S, 'tbx', tp + .2, .35); WRITE(S, 't1b', tp + .3, .3);
+    WRITE(S, 't2', TT(S, 'lookup', .45) - .1, .4); WRITE(S, 't3', TT(S, 'number', .6) - .1, .35); DRAW(S, 'st3', TT(S, 'number', .6) + .3, .25); const to = TT(S, 'o', .85) - .05; DRAW(S, 'stp', to, .3); WRITE(S, 'pn', to + .1, .3); }},
  { // 9 CTA
-  html: `<div class="abs center kick" style="top:420px">want 5 more like this?</div><div class="abs center" style="top:520px"><span class="notes">NOTES</span></div><div class="abs center h2" style="top:830px">comment NOTES for 5 more<br>questions with this pattern</div>
-   <div class="abs center" style="top:1160px"><span class="pill" id="fl"></span></div>`,
-  draw(S) { S.$('#fl').textContent = 'Follow ' + HANDLE; POP(S, '.notes', 0, 'pop'); S.$('.notes').style.transform += ` scale(${1 + .03 * Math.sin(S.t * 6)})`; }},
+  html: `${SVG(P('nb', rr(250, 520, 580, 250, 61), RED, 7) + P('da', arw(540, 800, 545, 900, 0), BLUE, 5) + P('fu', ln(300, 1150, 780, 1146, 62), BLUE, 4))}
+   ${HC('c1', 400, 80, 'Comment', 'blk b')}${HC('c2', 520, 230, 'NOTES', 'red mk')}${HC('c3', 930, 56, '5 more questions, same pattern')}${HC('c4', 1010, 46, 'straight to your DMs', 'gry')}${HC('c5', 1080, 56, '', 'b')}`,
+  draw(S) { S.$('#c5').textContent = 'follow ' + HANDLE; WRITE(S, 'c1', .02, .25); const tn = TT(S, 'notes', .15) - .15; WRITE(S, 'c2', tn, .35); DRAW(S, 'nb', tn + .25, .4);
+    DRAW(S, 'da', TT(S, 'send', .5) - .1, .3); WRITE(S, 'c3', TT(S, 'five', .6) - .1, .5); WRITE(S, 'c4', TT(S, 'pattern', .9) - .2, .3); WRITE(S, 'c5', S.dur - 1.6, .4); DRAW(S, 'fu', S.dur - 1.1, .3); }},
 ];

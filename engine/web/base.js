@@ -64,7 +64,7 @@ window.SERIES_COVERS = ['S1E01', 'S1E14', 'S2E05', 'S1E16', 'S3E23', 'S1E06'];
 window.ctaScene = (extra = '') => ({
   html: `<div class="abs center h2" style="top:290px;font-size:70px">Understand systems<br><i style="color:var(--yel)">like this</i></div>
     <div class="cta-grid">${SERIES_COVERS.map(c => `<img src="../../covers/${c}.jpg">`).join('')}</div>
-    <div class="abs center" style="top:1330px"><span class="cta-btn" id="fb">Follow @tech.explained.dev</span></div>
+    <div class="abs center" style="top:1330px"><span class="cta-btn" id="fb">Follow @tech.explained.dsa</span></div>
     <div class="abs center" style="top:1460px;font:500 32px Roboto;color:var(--mute)">full system design series on my page</div>${extra}`,
   draw(S) {
     S.$$('.cta-grid img').forEach((im, i) => { const p = S.P(.05 + i * .05, .3, back); im.style.opacity = clamp(p); im.style.transform = `scale(${.85 + .15 * clamp(p)})`; });

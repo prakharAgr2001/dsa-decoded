@@ -1,5 +1,5 @@
 """One place for branding. No personal names anywhere (reels, covers, captions, site)."""
-IG_HANDLE = 'tech.explained.dev'          # TODO confirm: same page as frontend-decoded, or a new handle
+IG_HANDLE = 'tech.explained.dsa'          # separate page from @tech.explained.dev
 IG_URL = f'https://instagram.com/{IG_HANDLE}'
 BRAND = 'DSA, <b>DECODED</b>'              # top strip in every reel frame (HTML)
 BRAND_TEXT = 'DSA, DECODED'                # covers / site
