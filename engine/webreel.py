@@ -124,7 +124,7 @@ def bed(epid, ep, sfx, total, spans):
     vo = _readwav(f'tmp/{epid}_vo.wav')
     env = np.convolve(np.abs(vo), np.ones(2400) / 2400, 'same')
     env = np.pad(env, (0, max(0, len(m) - len(env))))[:len(m)]
-    duck = 1 - .55 * np.clip(env / (env.max() * .25 + 1e-6), 0, 1)
+    duck = 1 - ep.get('duck', .55) * np.clip(env / (env.max() * .25 + 1e-6), 0, 1)
     y = x[:len(m)] + m * duck * ep.get('music_gain', .5)
     with wave.open(path, 'w') as w:
         w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes((np.clip(y, -1, 1) * 32767).astype(np.int16).tobytes())
