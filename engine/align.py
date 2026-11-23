@@ -12,7 +12,7 @@ def syl(w):
     if raw in ACRO1: return ACRO1[raw]
     if raw.isupper() and len(raw) <= 6:
         return sum(3 if ch == 'W' else 1 for ch in raw)
-    if raw.isdigit(): return max(1, len(raw) * 2)
+    if raw.isdigit(): return max(1, len(raw))   # '350' ~ 'three fifty'
     s = raw.lower()
     n = len(re.findall(r'[aeiouy]+', s))
     if s.endswith('e') and n > 1 and not s.endswith(('le', 'ee', 'ye')): n -= 1

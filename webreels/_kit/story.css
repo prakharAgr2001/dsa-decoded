@@ -17,3 +17,5 @@
 .num{font:700 90px Roboto;font-variant-numeric:tabular-nums;letter-spacing:-2px}
 .redbg{position:absolute;inset:0;background:#b3121c}
 /* ---- end kit ---- */
+.sglow{position:absolute;inset:0;opacity:0;pointer-events:none;z-index:-1}
+w{display:inline}
