@@ -36,10 +36,12 @@ No code in the reel. Every number on screen is computed (in JS or a checked comm
 2. Voice: Speko `audio.synthesize`, provider google-tts, voice "Fenrir", speed ~1.2, instructions "Young Indian male tech creator on Instagram, Indian English accent, warm, confident, energetic, conversational, punchy hook, clear teaching rhythm."
    (ElevenLabs "Kaanha" id kNgdRSecKh7LrZA0cR8g via Speko if the account has credit.) Then `python3 -m engine.voice tts SxEyy raw.wav --fit 46` -> vo/SxEyy.wav.
    Own recordings: `python3 -m engine.voice clean SxEyy file --fit 46`.
-3. `python3 -m engine.webreel check SxEyy` -> tmp/SxEyy_sheet.jpg. Fix overlaps.
-4. `python3 -m engine.webreel render SxEyy` -> out/SxEyy_<slug>.mp4 (background, several in a queue).
-5. `python3 -m publish.release S1` -> covers/, videos/, publish/queue.json, site/.
-6. `git add videos covers publish/queue.json site notes webreels && python3 -m publish.verify` (every queued item must have videos/<id>.mp4 + covers/<id>.jpg tracked).
+3. Exact sync (recommended for fast voices): transcribe the RAW voice with word timestamps (Speko `audio.transcribe`, `word_timestamps: true`), save the result JSON,
+   then `python3 -m engine.words SxEyy transcript.json --scale <atempo used>` -> `vo/SxEyy.words.json` (used instead of silence-based estimates).
+4. `python3 -m engine.webreel check SxEyy` -> tmp/SxEyy_sheet.jpg. Fix overlaps.
+5. `python3 -m engine.webreel render SxEyy` -> out/SxEyy_<slug>.mp4 (background, several in a queue).
+6. `python3 -m publish.release S1` -> covers/, videos/, publish/queue.json, site/.
+7. `git add videos covers publish/queue.json site notes webreels && python3 -m publish.verify` (every queued item must have videos/<id>.mp4 + covers/<id>.jpg tracked).
 
 ## Posting (GitHub Actions, .github/workflows/post-reel.yml)
 - Media URLs pinned to GITHUB_SHA; missing video/cover -> skipped, not failed; `hold: true` keeps an item from auto-posting.
@@ -52,3 +54,7 @@ No code in the reel. Every number on screen is computed (in JS or a checked comm
 - Before every push: `git pull --rebase origin main`, then `git -c push.negotiate=true push`.
 - `vo/`, `out/`, `tmp/` are git-ignored.
 - Site: Netlify, publish dir `site`, auto-deploy on push. Keep the hidden Medium card (`notes/links.json`). No emojis, no "TL;DR" on the site.
+
+## Look (chosen 2026-11-24)
+Notebook explainer: squared paper, handwritten ink (Kalam/Caveat), blue/red/green pens, self-drawing boxes/circles/arrows, a dry-run table that fills row by row.
+Reference episodes: `webreels/w3` (Two Sum, ~39 s, fast voice) and `webreels/t1` (Trapping Rain Water, ~44 s). No analogy unless it really helps.

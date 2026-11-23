@@ -35,7 +35,11 @@ def parse(scenes):
 def timing(epid, ep, scenes):
     words, pauses, _ = parse(scenes)
     wav = f'vo/{epid}.wav'
-    tm, dur = align(words, wav)
+    wj = f'vo/{epid}.words.json'   # exact per-word [start, end] from a transcription (engine/words.py); else estimate from silences
+    if os.path.exists(wj):
+        tm = json.load(open(wj)); assert len(tm) == len(words), f'{wj}: {len(tm)} timings for {len(words)} script words'
+    else:
+        tm, dur = align(words, wav)
     # insert pauses into audio
     with wave.open(wav) as wf:
         sr = wf.getframerate(); ch = wf.getnchannels(); sw = wf.getsampwidth()
