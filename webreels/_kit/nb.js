@@ -41,11 +41,11 @@ function NB_SCENES(nb) {
   return nb.scenes.map((sc, si) => SCENE(nb, g, sc, si, starts[si]));
 }
 function SCENE(nb, g, sc, si, st0) {
-  const vis = sc.vis !== undefined ? sc.vis : !['hook', 'cta', 'cx'].includes(sc.type); let svg = '', html = '', y = vis ? g.below : 330;
+  const vis = sc.vis !== undefined ? sc.vis : !['hook', 'cta', 'cx'].includes(sc.type); let svg = '', html = '', y = vis ? g.below : (sc.y0 || 330);
   if (sc.type === 'hook') return HOOK(sc.hook);
   if (sc.type === 'cta') return CTA(sc.cta || {});
   if (sc.type === 'cx') return CX(sc.cx);
-  if (sc.h) html += H('hd', 120, vis ? (nb.kind === 'bars' ? 250 : 300) : 330, sc.h.s || 56, sc.h.t, (sc.h.c || 'blk') + ' b');
+  if (sc.h) { html += H('hd', 120, vis ? (nb.kind === 'bars' ? 250 : 300) : (sc.y0 || 330), sc.h.s || 56, sc.h.t, (sc.h.c || 'blk') + ' b'); if (!vis) y += (sc.h.s || 56) * 1.9; }
   if (vis) { if (nb.kind === 'bars') nb.arr.forEach((h, i) => { const x = g.cx(i) - g.bw / 2, top = g.base - h * g.U;
         if (h) svg += P('bx' + i, rr(x, top, g.bw, h * g.U, 70 + i), INK, 5); html += `<div class="bfill" id="bf${i}" style="left:${x}px;top:${top}px;width:${g.bw}px;height:${h * g.U}px"></div>`;
         const w = (nb.water || [])[i] || 0; html += `<div class="wat" id="w${i}" style="left:${x + 4}px;top:${top - w * g.U}px;width:${g.bw - 8}px;height:${w * g.U}px"></div>`;

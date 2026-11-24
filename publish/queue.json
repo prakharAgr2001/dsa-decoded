@@ -200,6 +200,76 @@
   "posted_at": "2026-11-23 21:03 UTC"
  },
  {
+  "id": "X1",
+  "posted": false,
+  "video": "videos/X1.mp4",
+  "cover": "covers/X1.jpg",
+  "caption": "Flipkart UI Engineer 2 interview: every round, from a real LeetCode Discuss post.\nFollow @tech.explained.dsa for more real interview breakdowns\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "X2",
+  "posted": false,
+  "video": "videos/X2.mp4",
+  "cover": "covers/X2.jpg",
+  "caption": "Swiggy SDE-1 interview: every round, from a real LeetCode Discuss post.\nFollow @tech.explained.dsa for more real interview breakdowns\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "X3",
+  "posted": false,
+  "video": "videos/X3.mp4",
+  "cover": "covers/X3.jpg",
+  "caption": "Zomato SDE-1 UI interview: every round, from a real LeetCode Discuss post.\nFollow @tech.explained.dsa for more real interview breakdowns\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "X4",
+  "posted": false,
+  "video": "videos/X4.mp4",
+  "cover": "covers/X4.jpg",
+  "caption": "Angel One SDE-2 interview: every round, from a real LeetCode Discuss post.\nFollow @tech.explained.dsa for more real interview breakdowns\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "X5",
+  "posted": false,
+  "video": "videos/X5.mp4",
+  "cover": "covers/X5.jpg",
+  "caption": "Goldman Sachs Analyst interview: every round, from a real LeetCode Discuss post.\nFollow @tech.explained.dsa for more real interview breakdowns\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "X6",
+  "posted": false,
+  "video": "videos/X6.mp4",
+  "cover": "covers/X6.jpg",
+  "caption": "Intuit SDE-2 interview: every round, from a real LeetCode Discuss post.\nFollow @tech.explained.dsa for more real interview breakdowns\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "X7",
+  "posted": false,
+  "video": "videos/X7.mp4",
+  "cover": "covers/X7.jpg",
+  "caption": "Palo Alto Networks interview: every round, from a real LeetCode Discuss post.\nFollow @tech.explained.dsa for more real interview breakdowns\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "X8",
+  "posted": false,
+  "video": "videos/X8.mp4",
+  "cover": "covers/X8.jpg",
+  "caption": "Atlassian P40 interview: every round, from a real LeetCode Discuss post.\nFollow @tech.explained.dsa for more real interview breakdowns\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "X9",
+  "posted": false,
+  "video": "videos/X9.mp4",
+  "cover": "covers/X9.jpg",
+  "caption": "PhonePe SDE-2 interview: every round, from a real LeetCode Discuss post.\nFollow @tech.explained.dsa for more real interview breakdowns\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
+  "id": "X10",
+  "posted": false,
+  "video": "videos/X10.mp4",
+  "cover": "covers/X10.jpg",
+  "caption": "Uber SDE-1 (L3) interview: every round, from a real LeetCode Discuss post.\nFollow @tech.explained.dsa for more real interview breakdowns\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+ },
+ {
   "id": "S1E21",
   "posted": false,
   "video": "videos/S1E21.mp4",
