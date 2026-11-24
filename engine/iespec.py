@@ -10,4 +10,6 @@ def rnd(title, *lines, big=None):
 def outro():
     return dict(vis=False, y0=700, lines=[L('Follow', 'follow', 'blk', 120, b=True), L('@' + IG_HANDLE, 'follow', 'blue', 70), L('real interviews, decoded', 'real', 'red', 60)])
 OUTRO = 'Follow for more real interview breakdowns.'
+def outro_ai():
+    return dict(vis=False, y0=700, lines=[L('Follow', 'follow', 'blk', 120, b=True), L('@' + IG_HANDLE, 'follow', 'blue', 70), L('AI tools, decoded', None, 'red', 60)])
 def make(S): return build(S, 'char', ['x'])

@@ -5,6 +5,14 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from publish.episodes import load, key
 from config import IG_HANDLE, HASHTAGS
 
+AI_TAGS = '#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels'
+
+def ai_caption(ep):
+    from engine.aitools import T
+    repo, name, stars, sc, find = T[int(ep['id'][1:]) - 1]
+    return (f"{name}: {sc[0][0]}\n\nRepo: github.com/{repo}\n"
+            f"Save this for later and follow @{IG_HANDLE} for more AI tools\n\n{AI_TAGS}")
+
 def ie_caption(ep):
     return (f"{ep['title']}: every round, from a real LeetCode Discuss post.\n"
             f"Follow @{IG_HANDLE} for more real interview breakdowns\n\n{HASHTAGS}")
@@ -21,10 +29,11 @@ if __name__ == '__main__':
     ids = sorted((os.path.basename(p)[:-4] for p in glob.glob('videos/S*E*.mp4')), key=key)
     ies = sorted((os.path.basename(p)[:-4] for p in glob.glob('videos/X*.mp4')), key=lambda x: int(x[1:]))
     # interview-experience reels (X*) go right after whatever is already posted, ahead of unposted episodes
+    ais = sorted((os.path.basename(p)[:-4] for p in glob.glob('videos/Y*.mp4')), key=lambda x: int(x[1:]))
     posted = [i for i in ids if old.get(i, {}).get('posted')]
-    for eid in posted + ies + [i for i in ids if i not in posted]:
+    for eid in posted + ies + ais + [i for i in ids if i not in posted]:
         ep = load(eid); e = old.get(eid, {'id': eid, 'posted': False})
-        e.update(video=f'videos/{eid}.mp4', cover=f'covers/{eid}.jpg', caption=ie_caption(ep) if eid.startswith('X') else caption(ep))
+        e.update(video=f'videos/{eid}.mp4', cover=f'covers/{eid}.jpg', caption=ai_caption(ep) if eid.startswith('Y') else ie_caption(ep) if eid.startswith('X') else caption(ep))
         if ep.get('hold'): e['hold'] = True
         out.append(e)
     json.dump(out, open('publish/queue.json', 'w'), indent=1, ensure_ascii=False)

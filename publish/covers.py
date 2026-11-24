@@ -21,7 +21,7 @@ def cover(eid):
     subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-ss', str(ep.get('cover_t', 12)), '-i', src, '-frames:v', '1', fr], check=True)
     bg = Image.open(fr).convert('RGB').resize((1080, 1920)).filter(ImageFilter.GaussianBlur(16))
     im = ImageEnhance.Brightness(bg).enhance(.32); d = ImageDraw.Draw(im)
-    pill = 'REAL INTERVIEW' if ep['id'].startswith('X') else f"₹{ep['lpa']} LPA · {ep['company'].upper()}" if ep.get('company') else 'INTERVIEW CLASSIC'
+    pill = 'AI TOOL' if ep['id'].startswith('Y') else 'REAL INTERVIEW' if ep['id'].startswith('X') else f"₹{ep['lpa']} LPA · {ep['company'].upper()}" if ep.get('company') else 'INTERVIEW CLASSIC'
     f = font('int', 46); tw = f.getlength(pill)
     d.rounded_rectangle((540 - tw / 2 - 40, 420, 540 + tw / 2 + 40, 510), 45, fill=GRN); d.text((540, 465), pill, font=f, fill=INK, anchor='mm')
     title = ep['title'].upper(); size = 150
@@ -35,8 +35,8 @@ def cover(eid):
         d.polygon([(x0, y - 4 + sk), (x1 + 8, y - 14), (x1, y + size - 14), (x0 + 6, y + size - 4 - sk)], fill=YEL)
         d.text((540, y + size // 2 - 6), l, font=fo, fill=INK, anchor='mm'); y += size + 16
     fh = font('int', 52)
-    for l in wrap(ep['hook'], fh, 900): d.text((540, y + 70), l, font=fh, fill=WHITE, anchor='mm'); y += 66
-    pt = 'FROM LEETCODE DISCUSS' if ep['id'].startswith('X') else f"{ep['pattern'].upper()} PATTERN"; fp = font('int', 38); pw = fp.getlength(pt)
+    for l in wrap(ep['hook'].replace('⭐', 'stars on GitHub').strip(), fh, 900): d.text((540, y + 70), l, font=fh, fill=WHITE, anchor='mm'); y += 66
+    pt = 'SAVE THIS' if ep['id'].startswith('Y') else 'FROM LEETCODE DISCUSS' if ep['id'].startswith('X') else f"{ep['pattern'].upper()} PATTERN"; fp = font('int', 38); pw = fp.getlength(pt)
     d.rounded_rectangle((540 - pw / 2 - 30, 1400, 540 + pw / 2 + 30, 1470), 16, outline=YEL, width=4); d.text((540, 1435), pt, font=fp, fill=YEL, anchor='mm')
     d.text((540, 1620), BRAND_TEXT, font=font('osw', 60), fill=YEL, anchor='mm')
     return im
