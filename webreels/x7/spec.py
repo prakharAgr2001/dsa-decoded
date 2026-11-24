@@ -2,7 +2,8 @@ from engine.iespec import *
 # LeetCode Discuss, Palo Alto Networks (undated, India): https://leetcode.com/discuss/post/6775812/palo-alto-networks-interview-experience-rrahz/
 EP = epd('X7', 'Palo Alto Networks interview', 'Interview experience', 'Medium', 'palo-alto-networks', hook='strong DSA, still rejected', cover_t=2.0)
 S = [
- ("Palo Alto Networks. Strong in DSA, and still not selected. Here's what went wrong.", intro('Palo Alto Networks', 'Software Engineer · India', '3 rounds → [not selected]', 'red', at_co='palo', s=96)),
+ ("This candidate was strong in DSA at Palo Alto Networks, and still got rejected. Here's every interview round.",
+  dict(vis=False, y0=600, lines=[L('strong DSA', 'this', 'grn', 110, b=True), L('still rejected', 'rejected', 'red', 110, b=True), L('3 real interview rounds', 'every', 'blue', 64), L('from a LeetCode Discuss post', 'round', 'gry', 44)])),
  ('Round 1, online test. DSA multiple choice questions, then two basic coding problems.',
   rnd('Round 1 · Online test', L('DSA multiple choice', 'multiple', 'blue', 66), L('2 basic coding problems', 'coding', 'blue', 64))),
  ('Round 2, DSA. Complexity, alternative approaches, and explaining your thinking out loud.',
@@ -14,3 +15,4 @@ S = [
  (OUTRO, outro()),
 ]
 NARRATION, NB = make(S)
+NB['top'] = ('Palo Alto Networks', 'Software Engineer interview · India')

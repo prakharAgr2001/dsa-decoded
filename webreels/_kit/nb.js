@@ -42,6 +42,7 @@ function NB_SCENES(nb) {
 }
 function SCENE(nb, g, sc, si, st0) {
   const vis = sc.vis !== undefined ? sc.vis : !['hook', 'cta', 'cx'].includes(sc.type); let svg = '', html = '', y = vis ? g.below : (sc.y0 || 330);
+  if (nb.top && !sc.notop) html += `<div class="topbar"><div class="tb1">${nb.top[0]}</div><div class="tb2">${nb.top[1]}</div></div>`;
   if (sc.type === 'hook') return HOOK(sc.hook);
   if (sc.type === 'cta') return CTA(sc.cta || {});
   if (sc.type === 'cx') return CX(sc.cx);

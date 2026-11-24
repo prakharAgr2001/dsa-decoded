@@ -261,13 +261,11 @@
  },
  {
   "id": "X7",
-  "posted": true,
+  "posted": false,
   "video": "videos/X7.mp4",
   "cover": "covers/X7.jpg",
   "caption": "Palo Alto Networks interview: every round, from a real LeetCode Discuss post.\nFollow @tech.explained.dsa for more real interview breakdowns\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained",
-  "media_id": "18113199635348181",
-  "permalink": "https://www.instagram.com/reel/DgHyWJMD4rb/",
-  "posted_at": "2026-11-24 10:54 UTC"
+  "old_permalink": "https://www.instagram.com/reel/DgHyWJMD4rb/"
  },
  {
   "id": "X8",
