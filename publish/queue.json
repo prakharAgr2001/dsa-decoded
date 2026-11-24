@@ -301,213 +301,303 @@
  },
  {
   "id": "Y1",
-  "posted": false,
+  "posted": true,
   "video": "videos/Y1.mp4",
   "cover": "covers/Y1.jpg",
-  "caption": "Anthropic Skills: Anthropic's official Claude skills are sitting free on GitHub.\n\nRepo: github.com/anthropics/skills\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels"
+  "caption": "Anthropic Skills: Anthropic's official Claude skills are sitting free on GitHub.\n\nRepo: github.com/anthropics/skills\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels",
+  "media_id": "18014519865002746",
+  "permalink": "https://www.instagram.com/reel/DgH1tI1gIs2/",
+  "posted_at": "2026-11-24 11:23 UTC"
  },
  {
   "id": "Y2",
-  "posted": false,
+  "posted": true,
   "video": "videos/Y2.mp4",
   "cover": "covers/Y2.jpg",
-  "caption": "Superpowers: This Claude Code add-on has over 300 thousand GitHub stars.\n\nRepo: github.com/obra/superpowers\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels"
+  "caption": "Superpowers: This Claude Code add-on has over 300 thousand GitHub stars.\n\nRepo: github.com/obra/superpowers\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels",
+  "media_id": "18151774165555018",
+  "permalink": "https://www.instagram.com/reel/DgH1yNUD6M3/",
+  "posted_at": "2026-11-24 11:24 UTC"
  },
  {
   "id": "Y3",
-  "posted": false,
+  "posted": true,
   "video": "videos/Y3.mp4",
   "cover": "covers/Y3.jpg",
-  "caption": "Matt Pocock's Skills: Matt Pocock's skills repo hit around 300 thousand stars. Two skills explain why.\n\nRepo: github.com/mattpocock/skills\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels"
+  "caption": "Matt Pocock's Skills: Matt Pocock's skills repo hit around 300 thousand stars. Two skills explain why.\n\nRepo: github.com/mattpocock/skills\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels",
+  "media_id": "18067473332717014",
+  "permalink": "https://www.instagram.com/reel/DgH17TqJeQr/",
+  "posted_at": "2026-11-24 11:25 UTC"
  },
  {
   "id": "Y4",
-  "posted": false,
+  "posted": true,
   "video": "videos/Y4.mp4",
   "cover": "covers/Y4.jpg",
-  "caption": "Karpathy Skills: Andrej Karpathy listed how AI messes up code. Someone turned it into a skill with 210 thousand stars.\n\nRepo: github.com/forrestchang/andrej-karpathy-skills\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels"
+  "caption": "Karpathy Skills: Andrej Karpathy listed how AI messes up code. Someone turned it into a skill with 210 thousand stars.\n\nRepo: github.com/forrestchang/andrej-karpathy-skills\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels",
+  "media_id": "18258586990308554",
+  "permalink": "https://www.instagram.com/reel/DgH2FcwCHtm/",
+  "posted_at": "2026-11-24 11:27 UTC"
  },
  {
   "id": "Y5",
-  "posted": false,
+  "posted": true,
   "video": "videos/Y5.mp4",
   "cover": "covers/Y5.jpg",
-  "caption": "Caveman: Me Claude. Me talk short. Me save tokens.\n\nRepo: github.com/JuliusBrussee/caveman\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels"
+  "caption": "Caveman: Me Claude. Me talk short. Me save tokens.\n\nRepo: github.com/JuliusBrussee/caveman\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels",
+  "media_id": "17997549384103650",
+  "permalink": "https://www.instagram.com/reel/DgH2K5lFOwF/",
+  "posted_at": "2026-11-24 11:28 UTC"
  },
  {
   "id": "Y6",
-  "posted": false,
+  "posted": true,
   "video": "videos/Y6.mp4",
   "cover": "covers/Y6.jpg",
-  "caption": "Ponytail: The best code is the code you never write. This skill forces your AI to remember that.\n\nRepo: github.com/DietrichGebert/ponytail\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels"
+  "caption": "Ponytail: The best code is the code you never write. This skill forces your AI to remember that.\n\nRepo: github.com/DietrichGebert/ponytail\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels",
+  "media_id": "18173041957482594",
+  "permalink": "https://www.instagram.com/reel/DgH2QZvkfTy/",
+  "posted_at": "2026-11-24 11:28 UTC"
  },
  {
   "id": "Y7",
-  "posted": false,
+  "posted": true,
   "video": "videos/Y7.mp4",
   "cover": "covers/Y7.jpg",
-  "caption": "Impeccable: Why does every AI built website look the same?\n\nRepo: github.com/pbakaus/impeccable\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels"
+  "caption": "Impeccable: Why does every AI built website look the same?\n\nRepo: github.com/pbakaus/impeccable\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels",
+  "media_id": "18100617611244758",
+  "permalink": "https://www.instagram.com/reel/DgH2VUYHFDW/",
+  "posted_at": "2026-11-24 11:29 UTC"
  },
  {
   "id": "Y8",
-  "posted": false,
+  "posted": true,
   "video": "videos/Y8.mp4",
   "cover": "covers/Y8.jpg",
-  "caption": "Vercel Agent Skills: Vercel turned its front end rulebook into skills your AI can follow.\n\nRepo: github.com/vercel-labs/agent-skills\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels"
+  "caption": "Vercel Agent Skills: Vercel turned its front end rulebook into skills your AI can follow.\n\nRepo: github.com/vercel-labs/agent-skills\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels",
+  "media_id": "18155009476553194",
+  "permalink": "https://www.instagram.com/reel/DgH2aR-GTno/",
+  "posted_at": "2026-11-24 11:30 UTC"
  },
  {
   "id": "Y9",
-  "posted": false,
+  "posted": true,
   "video": "videos/Y9.mp4",
   "cover": "covers/Y9.jpg",
-  "caption": "Web Quality Skills: Addy Osmani built skills that audit your website for you.\n\nRepo: github.com/addyosmani/web-quality-skills\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels"
+  "caption": "Web Quality Skills: Addy Osmani built skills that audit your website for you.\n\nRepo: github.com/addyosmani/web-quality-skills\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels",
+  "media_id": "17920506192498409",
+  "permalink": "https://www.instagram.com/reel/DgH2fiwFJgC/",
+  "posted_at": "2026-11-24 11:30 UTC"
  },
  {
   "id": "Y10",
-  "posted": false,
+  "posted": true,
   "video": "videos/Y10.mp4",
   "cover": "covers/Y10.jpg",
-  "caption": "Remotion Skills: You can make videos with React code. Now Claude can write it for you.\n\nRepo: github.com/remotion-dev/skills\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels"
+  "caption": "Remotion Skills: You can make videos with React code. Now Claude can write it for you.\n\nRepo: github.com/remotion-dev/skills\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels",
+  "media_id": "18116129203892234",
+  "permalink": "https://www.instagram.com/reel/DgH2kfMjYxa/",
+  "posted_at": "2026-11-24 11:31 UTC"
  },
  {
   "id": "Y11",
-  "posted": false,
+  "posted": true,
   "video": "videos/Y11.mp4",
   "cover": "covers/Y11.jpg",
-  "caption": "Cloudflare Security Audit: Cloudflare open sourced a security audit for your AI coding agent.\n\nRepo: github.com/cloudflare/security-audit-skill\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels"
+  "caption": "Cloudflare Security Audit: Cloudflare open sourced a security audit for your AI coding agent.\n\nRepo: github.com/cloudflare/security-audit-skill\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels",
+  "media_id": "18508039324097646",
+  "permalink": "https://www.instagram.com/reel/DgH2pGJgsXg/",
+  "posted_at": "2026-11-24 11:32 UTC"
  },
  {
   "id": "Y12",
-  "posted": false,
+  "posted": true,
   "video": "videos/Y12.mp4",
   "cover": "covers/Y12.jpg",
-  "caption": "Trail of Bits Skills: One of the best known security firms shares its AI skills for free.\n\nRepo: github.com/trailofbits/skills\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels"
+  "caption": "Trail of Bits Skills: One of the best known security firms shares its AI skills for free.\n\nRepo: github.com/trailofbits/skills\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels",
+  "media_id": "18377332765242353",
+  "permalink": "https://www.instagram.com/reel/DgH2xKGDwvN/",
+  "posted_at": "2026-11-24 11:33 UTC"
  },
  {
   "id": "Y13",
-  "posted": false,
+  "posted": true,
   "video": "videos/Y13.mp4",
   "cover": "covers/Y13.jpg",
-  "caption": "Context Mode: Long sessions fill Claude's context with junk.\n\nRepo: github.com/mksglu/context-mode\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels"
+  "caption": "Context Mode: Long sessions fill Claude's context with junk.\n\nRepo: github.com/mksglu/context-mode\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels",
+  "media_id": "18425769760157363",
+  "permalink": "https://www.instagram.com/reel/DgH2440Aclk/",
+  "posted_at": "2026-11-24 11:34 UTC"
  },
  {
   "id": "Y14",
-  "posted": false,
+  "posted": true,
   "video": "videos/Y14.mp4",
   "cover": "covers/Y14.jpg",
-  "caption": "Claude Mem: Your AI agent forgets everything you did yesterday.\n\nRepo: github.com/thedotmack/claude-mem\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels"
+  "caption": "Claude Mem: Your AI agent forgets everything you did yesterday.\n\nRepo: github.com/thedotmack/claude-mem\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels",
+  "media_id": "18113055470186972",
+  "permalink": "https://www.instagram.com/reel/DgH3AQzCtYm/",
+  "posted_at": "2026-11-24 11:35 UTC"
  },
  {
   "id": "Y15",
-  "posted": false,
+  "posted": true,
   "video": "videos/Y15.mp4",
   "cover": "covers/Y15.jpg",
-  "caption": "T3 Code: This repo gained almost 17 thousand stars in one week.\n\nRepo: github.com/pingdotgg/t3code\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels"
+  "caption": "T3 Code: This repo gained almost 17 thousand stars in one week.\n\nRepo: github.com/pingdotgg/t3code\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels",
+  "media_id": "18041191226894004",
+  "permalink": "https://www.instagram.com/reel/DgH3GPUgo5_/",
+  "posted_at": "2026-11-24 11:35 UTC"
  },
  {
   "id": "Y16",
-  "posted": false,
+  "posted": true,
   "video": "videos/Y16.mp4",
   "cover": "covers/Y16.jpg",
-  "caption": "Orca: One coding agent is not enough anymore.\n\nRepo: github.com/stablyai/orca\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels"
+  "caption": "Orca: One coding agent is not enough anymore.\n\nRepo: github.com/stablyai/orca\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels",
+  "media_id": "18653792692027025",
+  "permalink": "https://www.instagram.com/reel/DgH3QA4gVjr/",
+  "posted_at": "2026-11-24 11:37 UTC"
  },
  {
   "id": "Y17",
-  "posted": false,
+  "posted": true,
   "video": "videos/Y17.mp4",
   "cover": "covers/Y17.jpg",
-  "caption": "OpenClaw: Arguably the fastest growing open source project in GitHub history is an AI agent.\n\nRepo: github.com/openclaw/openclaw\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels"
+  "caption": "OpenClaw: Arguably the fastest growing open source project in GitHub history is an AI agent.\n\nRepo: github.com/openclaw/openclaw\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels",
+  "media_id": "18088089422325265",
+  "permalink": "https://www.instagram.com/reel/DgH3Ui8E_W3/",
+  "posted_at": "2026-11-24 11:37 UTC"
  },
  {
   "id": "Y18",
-  "posted": false,
+  "posted": true,
   "video": "videos/Y18.mp4",
   "cover": "covers/Y18.jpg",
-  "caption": "Claude Code: One of the most starred agent repos on GitHub isn't even open source.\n\nRepo: github.com/anthropics/claude-code\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels"
+  "caption": "Claude Code: One of the most starred agent repos on GitHub isn't even open source.\n\nRepo: github.com/anthropics/claude-code\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels",
+  "media_id": "18093997067680758",
+  "permalink": "https://www.instagram.com/reel/DgH3Yh6DiEn/",
+  "posted_at": "2026-11-24 11:38 UTC"
  },
  {
   "id": "Y19",
-  "posted": false,
+  "posted": true,
   "video": "videos/Y19.mp4",
   "cover": "covers/Y19.jpg",
-  "caption": "Gemini CLI: Google put its coding agent on GitHub, open source.\n\nRepo: github.com/google-gemini/gemini-cli\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels"
+  "caption": "Gemini CLI: Google put its coding agent on GitHub, open source.\n\nRepo: github.com/google-gemini/gemini-cli\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels",
+  "media_id": "18130602887492720",
+  "permalink": "https://www.instagram.com/reel/DgH3lSxAeGi/",
+  "posted_at": "2026-11-24 11:40 UTC"
  },
  {
   "id": "Y20",
-  "posted": false,
+  "posted": true,
   "video": "videos/Y20.mp4",
   "cover": "covers/Y20.jpg",
-  "caption": "goose: This month's top trending coding agent isn't from an AI lab.\n\nRepo: github.com/block/goose\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels"
+  "caption": "goose: This month's top trending coding agent isn't from an AI lab.\n\nRepo: github.com/block/goose\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels",
+  "media_id": "18091668089700467",
+  "permalink": "https://www.instagram.com/reel/DgH3qMGCjte/",
+  "posted_at": "2026-11-24 11:41 UTC"
  },
  {
   "id": "Y21",
-  "posted": false,
+  "posted": true,
   "video": "videos/Y21.mp4",
   "cover": "covers/Y21.jpg",
-  "caption": "Browser Use: Your AI can't click buttons on websites. Unless you give it this.\n\nRepo: github.com/browser-use/browser-use\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels"
+  "caption": "Browser Use: Your AI can't click buttons on websites. Unless you give it this.\n\nRepo: github.com/browser-use/browser-use\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels",
+  "media_id": "18130005772886606",
+  "permalink": "https://www.instagram.com/reel/DgH3vg7jpzj/",
+  "posted_at": "2026-11-24 11:41 UTC"
  },
  {
   "id": "Y22",
-  "posted": false,
+  "posted": true,
   "video": "videos/Y22.mp4",
   "cover": "covers/Y22.jpg",
-  "caption": "Scrapling: Your AI agent needs data from the web. Scrapling gets it.\n\nRepo: github.com/D4Vinci/Scrapling\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels"
+  "caption": "Scrapling: Your AI agent needs data from the web. Scrapling gets it.\n\nRepo: github.com/D4Vinci/Scrapling\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels",
+  "media_id": "18097999679163314",
+  "permalink": "https://www.instagram.com/reel/DgH31JdHFtd/",
+  "posted_at": "2026-11-24 11:42 UTC"
  },
  {
   "id": "Y23",
-  "posted": false,
+  "posted": true,
   "video": "videos/Y23.mp4",
   "cover": "covers/Y23.jpg",
-  "caption": "Dify: Build an AI app without writing the backend.\n\nRepo: github.com/langgenius/dify\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels"
+  "caption": "Dify: Build an AI app without writing the backend.\n\nRepo: github.com/langgenius/dify\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels",
+  "media_id": "17899297281418270",
+  "permalink": "https://www.instagram.com/reel/DgH3_CXmc8Z/",
+  "posted_at": "2026-11-24 11:43 UTC"
  },
  {
   "id": "Y24",
-  "posted": false,
+  "posted": true,
   "video": "videos/Y24.mp4",
   "cover": "covers/Y24.jpg",
-  "caption": "n8n: Connect all your apps, then let AI work inside the workflow.\n\nRepo: github.com/n8n-io/n8n\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels"
+  "caption": "n8n: Connect all your apps, then let AI work inside the workflow.\n\nRepo: github.com/n8n-io/n8n\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels",
+  "media_id": "17942535408400336",
+  "permalink": "https://www.instagram.com/reel/DgH4JK0DxpC/",
+  "posted_at": "2026-11-24 11:45 UTC"
  },
  {
   "id": "Y25",
-  "posted": false,
+  "posted": true,
   "video": "videos/Y25.mp4",
   "cover": "covers/Y25.jpg",
-  "caption": "Context7: Your AI keeps writing code for an old version of the library?\n\nRepo: github.com/upstash/context7\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels"
+  "caption": "Context7: Your AI keeps writing code for an old version of the library?\n\nRepo: github.com/upstash/context7\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels",
+  "media_id": "17951833398072013",
+  "permalink": "https://www.instagram.com/reel/DgH4PkClbpK/",
+  "posted_at": "2026-11-24 11:46 UTC"
  },
  {
   "id": "Y26",
-  "posted": false,
+  "posted": true,
   "video": "videos/Y26.mp4",
   "cover": "covers/Y26.jpg",
-  "caption": "Playwright MCP: Let your AI test your web app like a real user.\n\nRepo: github.com/microsoft/playwright-mcp\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels"
+  "caption": "Playwright MCP: Let your AI test your web app like a real user.\n\nRepo: github.com/microsoft/playwright-mcp\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels",
+  "media_id": "18132526220476848",
+  "permalink": "https://www.instagram.com/reel/DgH4UOeDCj5/",
+  "posted_at": "2026-11-24 11:46 UTC"
  },
  {
   "id": "Y27",
-  "posted": false,
+  "posted": true,
   "video": "videos/Y27.mp4",
   "cover": "covers/Y27.jpg",
-  "caption": "Awesome MCP Servers: Thousands of MCP servers exist. This list finds the good ones.\n\nRepo: github.com/punkpeye/awesome-mcp-servers\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels"
+  "caption": "Awesome MCP Servers: Thousands of MCP servers exist. This list finds the good ones.\n\nRepo: github.com/punkpeye/awesome-mcp-servers\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels",
+  "media_id": "17987491826898234",
+  "permalink": "https://www.instagram.com/reel/DgH4aESCRXB/",
+  "posted_at": "2026-11-24 11:47 UTC"
  },
  {
   "id": "Y28",
-  "posted": false,
+  "posted": true,
   "video": "videos/Y28.mp4",
   "cover": "covers/Y28.jpg",
-  "caption": "AI Engineering from Scratch: Learn AI engineering from scratch, for free.\n\nRepo: github.com/rohitg00/ai-engineering-from-scratch\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels"
+  "caption": "AI Engineering from Scratch: Learn AI engineering from scratch, for free.\n\nRepo: github.com/rohitg00/ai-engineering-from-scratch\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels",
+  "media_id": "18133855651840186",
+  "permalink": "https://www.instagram.com/reel/DgH4hURlVbx/",
+  "posted_at": "2026-11-24 11:48 UTC"
  },
  {
   "id": "Y29",
-  "posted": false,
+  "posted": true,
   "video": "videos/Y29.mp4",
   "cover": "covers/Y29.jpg",
-  "caption": "Understand Anything: Graphs that teach beat graphs that impress.\n\nRepo: github.com/Lum1104/Understand-Anything\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels"
+  "caption": "Understand Anything: Graphs that teach beat graphs that impress.\n\nRepo: github.com/Lum1104/Understand-Anything\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels",
+  "media_id": "18121756771994661",
+  "permalink": "https://www.instagram.com/reel/DgH4lRkghKa/",
+  "posted_at": "2026-11-24 11:49 UTC"
  },
  {
   "id": "Y30",
-  "posted": false,
+  "posted": true,
   "video": "videos/Y30.mp4",
   "cover": "covers/Y30.jpg",
-  "caption": "Unsloth: Want to fine tune your own AI model?\n\nRepo: github.com/unslothai/unsloth\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels"
+  "caption": "Unsloth: Want to fine tune your own AI model?\n\nRepo: github.com/unslothai/unsloth\nSave this for later and follow @tech.explained.dsa for more AI tools\n\n#ai #aitools #github #opensource #claudecode #mcp #developer #coding #programming #techreels",
+  "media_id": "17972554565964301",
+  "permalink": "https://www.instagram.com/reel/DgH4qbyDZ2R/",
+  "posted_at": "2026-11-24 11:49 UTC"
  },
  {
   "id": "S1E21",
