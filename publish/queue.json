@@ -602,10 +602,13 @@
  },
  {
   "id": "S1E21",
-  "posted": false,
+  "posted": true,
   "video": "videos/S1E21.mp4",
   "cover": "covers/S1E21.jpg",
-  "caption": "Google asked this 👀\nSubarray Sum Equals K, the Prefix sum + hash map way.\n💬 Comment NOTES for 5 more Prefix sum + hash map questions\n📤 Send this to a friend with an interview this week\nFollow @tech.explained.dsa\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained"
+  "caption": "Google asked this 👀\nSubarray Sum Equals K, the Prefix sum + hash map way.\n💬 Comment NOTES for 5 more Prefix sum + hash map questions\n📤 Send this to a friend with an interview this week\nFollow @tech.explained.dsa\n\n#dsa #leetcode #codinginterview #javascript #placements #techexplained",
+  "media_id": "18651926395047454",
+  "permalink": "https://www.instagram.com/reel/DgLnfOShMth/",
+  "posted_at": "2026-11-25 22:36 UTC"
  },
  {
   "id": "S1E22",
